@@ -1,0 +1,20 @@
+.app{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #dde2eb;
+}
+::-webkit-scrollbar {
+	width: 10px;
+}
+::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	background: rgba(147, 147, 147, 0.3);
+}
+.ant-tabs-nav::before{
+  border: 0 !important;
+
+
+}
