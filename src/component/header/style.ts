@@ -9,6 +9,7 @@ export const HeaderWrapper = styled.div`
     height: 44px;
     margin-left: 30px;
     border-radius: 8px;
+    cursor: pointer;
   }
   .icons {
     margin-left: 100px;

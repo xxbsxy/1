@@ -12,7 +12,7 @@ const RecommendSong: FC<IProps> = () => {
   const dispatch = useAppDispatch()
   useEffect(() => {
     dispatch(fetchRecommendSongsDataAction())
-  }, [])
+  }, [dispatch])
   const { recommendSongs } = useAppSelector(
     (state) => ({
       recommendSongs: state.music.recommendSongs

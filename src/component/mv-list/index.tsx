@@ -7,14 +7,14 @@ import { formatPlayCount } from '@/utils/formatPlayCount'
 import mvPlaySvg from '@/assets/img/music/mvPlay.svg'
 interface IProps {
   children?: ReactNode
-  mvlist: IMvData[]
+  mvs: IMvData[]
 }
 
 const Mvlist: FC<IProps> = (props) => {
   return (
     <MvlistWrapper>
       <Row>
-        {props.mvlist.map((item) => {
+        {props.mvs.map((item) => {
           return (
             <Col span={8} key={item.id}>
               <div className="mv-list">

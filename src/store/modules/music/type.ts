@@ -72,9 +72,9 @@ export interface IMvData {
   artistId: number
   duration: number
   mark: number
-  subed: boolean
+  subed?: boolean
   artists: Artist[]
-  alias: string[]
+  alias?: string[]
 }
 
 export interface IMvDataObject {

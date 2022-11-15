@@ -1,9 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { shallowEqual, TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
 import musicSlice from './modules/music/music'
+import searchSlice from './modules/search/search'
+import playlistSlice from './modules/playlist/playlist'
+
 const store = configureStore({
   reducer: {
-    music: musicSlice
+    music: musicSlice,
+    search: searchSlice,
+    playlist: playlistSlice
   }
 })
 //二次封装 使state能自动推导类型

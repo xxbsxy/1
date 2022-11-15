@@ -14,7 +14,7 @@ const Music: FC<IProps> = () => {
   const dispatch = useAppDispatch()
   useEffect(() => {
     dispatch(fetchBannerDataAction())
-  }, [])
+  }, [dispatch])
   return (
     <div>
       <MusicBanner />

@@ -3,7 +3,7 @@ import type { FC, ReactNode } from 'react'
 import { MvWrapper } from './style'
 import { shallowEqualApp, useAppDispatch, useAppSelector } from '@/store'
 import { fetchRecommendMvDataAction } from '@/store/modules/music/music'
-import Mvlist from '@/component/mvlist'
+import Mvlist from '@/component/mv-list'
 interface IProps {
   children?: ReactNode
 }
@@ -13,7 +13,7 @@ const RecommendMv: FC<IProps> = () => {
   const dispatch = useAppDispatch()
   useEffect(() => {
     dispatch(fetchRecommendMvDataAction())
-  }, [])
+  }, [dispatch])
   const { recommendMv } = useAppSelector(
     (state) => ({
       recommendMv: state.music.recommendMv
@@ -22,7 +22,7 @@ const RecommendMv: FC<IProps> = () => {
   )
   return (
     <MvWrapper>
-      <Mvlist mvlist={recommendMv} />
+      <Mvlist mvs={recommendMv} />
     </MvWrapper>
   )
 }

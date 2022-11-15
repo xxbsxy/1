@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const SongWrapper = styled.div`
+export const SongListWrapper = styled.div`
   .td1 {
     display: flex;
     align-items: center;

@@ -3,7 +3,7 @@ import type { FC, ReactNode } from 'react'
 import { PlaylistWrapper } from './styled'
 import { shallowEqualApp, useAppDispatch, useAppSelector } from '@/store'
 import { fetchRecommendPlaylistDataAction } from '@/store/modules/music/music'
-import Playlist from '@/component/playlist-list'
+import PlaylistList from '@/component/playlist-list'
 interface IProps {
   children?: ReactNode
 }
@@ -13,7 +13,7 @@ const RecommendPlaylist: FC<IProps> = () => {
   const dispatch = useAppDispatch()
   useEffect(() => {
     dispatch(fetchRecommendPlaylistDataAction())
-  }, [])
+  }, [dispatch])
   const { recommendPlaylist } = useAppSelector(
     (state) => ({
       recommendPlaylist: state.music.recommendPlaylist
@@ -22,7 +22,7 @@ const RecommendPlaylist: FC<IProps> = () => {
   )
   return (
     <PlaylistWrapper>
-      <Playlist playlist={recommendPlaylist} />
+      <PlaylistList playlist={recommendPlaylist} />
     </PlaylistWrapper>
   )
 }

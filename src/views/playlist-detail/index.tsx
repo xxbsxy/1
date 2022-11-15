@@ -1,6 +1,9 @@
-import React, { memo } from 'react'
+import React, { memo, useEffect } from 'react'
 import type { FC, ReactNode } from 'react'
 import { useSearchParams } from 'react-router-dom'
+import { useAppDispatch } from '@/store'
+import { featchPlaylistDataAction } from '@/store/modules/playlist/playlist'
+import PlaylistTop from './playlist-top'
 
 interface IProps {
   children?: ReactNode
@@ -8,9 +11,19 @@ interface IProps {
 
 const PlaylistDetail: FC<IProps> = () => {
   const [searchParams] = useSearchParams()
-  const id = searchParams.get('id')
+  const id = searchParams.get('id') as string
 
-  return <div>index</div>
+  const dispatch = useAppDispatch()
+
+  useEffect(() => {
+    dispatch(featchPlaylistDataAction(id))
+  }, [dispatch, id])
+
+  return (
+    <div>
+      <PlaylistTop />
+    </div>
+  )
 }
 
 export default memo(PlaylistDetail)
