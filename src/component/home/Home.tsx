@@ -3,8 +3,9 @@ import type { FC, ReactNode } from 'react'
 import { useRoutes } from 'react-router-dom'
 import routes from '@/router'
 import { HomeWrapper } from './style'
-import Aside from '../aside'
-import Header from '../header'
+import Aside from './c-cpn/aside'
+import Header from './c-cpn/header'
+import Footer from './c-cpn/footer'
 interface IProps {
   children?: ReactNode
 }
@@ -21,7 +22,9 @@ const Home: FC<IProps> = () => {
         </div>
         <div className="right-area">
           <div className="content">{useRoutes(routes)}</div>
-          <div className="footer">footer</div>
+          <div className="footer">
+            <Footer />
+          </div>
         </div>
       </div>
     </HomeWrapper>

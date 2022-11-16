@@ -1,4 +1,4 @@
-import React, { memo } from 'react'
+import React, { memo, useState } from 'react'
 import type { FC, ReactNode } from 'react'
 import { BannerWrapper } from './style'
 import { shallowEqualApp, useAppSelector } from '@/store'
@@ -8,6 +8,7 @@ interface IProps {
 }
 
 const MusicBanner: FC<IProps> = () => {
+  const [currentIndex, setCurrentIndex] = useState(0)
   //获取轮播图数据
   const { banners } = useAppSelector(
     (state) => ({
@@ -15,9 +16,19 @@ const MusicBanner: FC<IProps> = () => {
     }),
     shallowEqualApp
   )
+
+  const handleAfterChange = (current: number) => {
+    setCurrentIndex(current)
+  }
+  let bgcUrl = banners[currentIndex]?.imageUrl
+
+  if (bgcUrl) {
+    bgcUrl = bgcUrl + '?imageView&blur=40x20'
+  }
+  console.log(bgcUrl)
   return (
-    <BannerWrapper>
-      <Carousel autoplay>
+    <BannerWrapper style={{ background: `url('${bgcUrl}') center center / 6000px` }}>
+      <Carousel autoplay afterChange={handleAfterChange} effect="fade">
         {banners.map((item) => {
           return (
             <div key={item.imageUrl}>

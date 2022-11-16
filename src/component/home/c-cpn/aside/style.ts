@@ -18,4 +18,10 @@ export const AsideWrapper = styled.div`
       margin-left: 10px;
     }
   }
+  .title {
+    margin-left: 24px;
+    margin-top: 16px;
+    font-size: 20px;
+    font-weight: 600;
+  }
 `

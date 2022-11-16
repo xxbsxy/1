@@ -222,3 +222,14 @@ export interface IPlaylistObject {
   score?: any
   algTags: string[]
 }
+export interface IIds {
+  id: number
+  v: number
+  t: number
+  at: number
+  alg?: any
+  uid: number
+  rcmdReason: string
+  sc?: any
+  f?: any
+}

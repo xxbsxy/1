@@ -5,6 +5,7 @@ import { IMvData } from '@/store/modules/music/type'
 import { Col, Row } from 'antd'
 import { formatPlayCount } from '@/utils/formatPlayCount'
 import mvPlaySvg from '@/assets/img/music/mvPlay.svg'
+import { Image } from 'antd'
 interface IProps {
   children?: ReactNode
   mvs: IMvData[]
@@ -19,7 +20,7 @@ const Mvlist: FC<IProps> = (props) => {
             <Col span={8} key={item.id}>
               <div className="mv-list">
                 {/* mv图片 */}
-                <img src={item.cover} className="img" />
+                <Image src={item.cover} className="img" placeholder preview={false} />
                 {/* 播放按钮 */}
                 <div className="play-icon"></div>
                 {/* 播放数 */}

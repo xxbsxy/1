@@ -8,7 +8,6 @@ export const PlaylistWrapper = styled.div`
   .playlist-item {
     position: relative;
     margin-top: 1px;
-    margin-left: -5px;
     width: 220px;
     height: 210px;
     cursor: pointer;
@@ -22,8 +21,8 @@ export const PlaylistWrapper = styled.div`
       background-color: rgba(0, 0, 0, 0.5);
     }
     .pic {
-      width: 100%;
-      height: 100%;
+      width: 220px;
+      height: 210px;
       border-radius: 10px;
     }
     .playCount {
@@ -73,7 +72,7 @@ export const PlaylistWrapper = styled.div`
     }
   }
   .name {
-    margin: 10px 0px 20px 4px;
+    margin: 15px 0px 20px 4px;
     width: 220px;
     font-size: 14px;
     white-space: nowrap;

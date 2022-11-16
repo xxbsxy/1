@@ -4,8 +4,9 @@ export const SongListWrapper = styled.div`
   .td1 {
     display: flex;
     align-items: center;
+    margin-left: 0;
     width: 500px;
-    img {
+    .pic {
       margin: 0 15px;
       width: 40px;
       height: 40px;
@@ -39,7 +40,7 @@ export const SongListWrapper = styled.div`
     font-weight: 700;
     color: #909399;
     .song-name {
-      margin-left: 10px;
+      margin-left: 5px;
     }
   }
 `

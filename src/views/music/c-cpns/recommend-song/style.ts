@@ -5,7 +5,7 @@ export const SongWrapper = styled.div`
     display: flex;
     align-items: center;
     width: 500px;
-    img {
+    .pic {
       margin: 0 15px;
       width: 40px;
       height: 40px;

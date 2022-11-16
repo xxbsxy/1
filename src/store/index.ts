@@ -3,12 +3,14 @@ import { shallowEqual, TypedUseSelectorHook, useDispatch, useSelector } from 're
 import musicSlice from './modules/music/music'
 import searchSlice from './modules/search/search'
 import playlistSlice from './modules/playlist/playlist'
+import footerSlice from './modules/footer/footer'
 
 const store = configureStore({
   reducer: {
     music: musicSlice,
     search: searchSlice,
-    playlist: playlistSlice
+    playlist: playlistSlice,
+    footer: footerSlice
   }
 })
 //二次封装 使state能自动推导类型

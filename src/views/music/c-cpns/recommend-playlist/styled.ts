@@ -9,7 +9,6 @@ export const PlaylistWrapper = styled.div`
   .playlist-item {
     position: relative;
     margin-top: 20px;
-    margin-left: 14px;
     width: 220px;
     height: 210px;
     cursor: pointer;

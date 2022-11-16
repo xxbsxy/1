@@ -38,6 +38,7 @@ const Aside: FC<IProps> = () => {
   return (
     <AsideWrapper>
       <div>
+        <h2 className="title">发现</h2>
         {list.map((item) => {
           return (
             <div key={item.url} className="item">

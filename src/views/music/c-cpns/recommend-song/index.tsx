@@ -4,6 +4,7 @@ import { SongWrapper } from './style'
 import { shallowEqualApp, useAppDispatch, useAppSelector } from '@/store'
 import { fetchRecommendSongsDataAction } from '@/store/modules/music/music'
 import { formatMillisecond } from '@/utils/formatMillisecond'
+import { Image } from 'antd'
 interface IProps {
   children?: ReactNode
 }
@@ -33,7 +34,7 @@ const RecommendSong: FC<IProps> = () => {
             return (
               <tr key={item.id} className="item">
                 <td className="td1">
-                  <img src={item?.picUrl} alt="" />
+                  <Image src={item?.picUrl} alt="" className="pic" placeholder preview={false} />
                   {item?.name}
                 </td>
                 <td className="td2">{item?.song?.artists[0]?.name}</td>

@@ -4,6 +4,7 @@ import { useSearchParams } from 'react-router-dom'
 import { useAppDispatch } from '@/store'
 import { featchPlaylistDataAction } from '@/store/modules/playlist/playlist'
 import PlaylistTop from './playlist-top'
+import Tabs from './tabs'
 
 interface IProps {
   children?: ReactNode
@@ -22,6 +23,7 @@ const PlaylistDetail: FC<IProps> = () => {
   return (
     <div>
       <PlaylistTop />
+      <Tabs />
     </div>
   )
 }

@@ -10,8 +10,8 @@ export const MvlistWrapper = styled.div`
     height: 219px;
     cursor: pointer;
     .img {
-      width: 100%;
-      height: 100%;
+      width: 390px;
+      height: 224px;
       border-radius: 10px;
       border: 5px solid rgb(247, 247, 247);
       transition: all 0.3s ease;

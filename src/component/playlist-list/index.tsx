@@ -6,7 +6,7 @@ import { Col, Row } from 'antd'
 import musicSvg from '@/assets/img/music/music.svg'
 import { formatPlayCount } from '@/utils/formatPlayCount'
 import { useNavigate } from 'react-router-dom'
-
+import { Image } from 'antd'
 interface IProps {
   children?: ReactNode
   playlist: IPlaylist[]
@@ -28,7 +28,13 @@ const Playlist: FC<IProps> = (props) => {
                 {/* 遮罩层 */}
                 <div className="mask"></div>
                 {/* 歌单图片 */}
-                <img src={item.picUrl || item.coverImgUrl} className="pic" alt="" />
+                <Image
+                  src={item.picUrl || item.coverImgUrl}
+                  className="pic"
+                  alt=""
+                  placeholder
+                  preview={false}
+                />
                 {/* 播放数 */}
                 <div className="playCount">
                   <img src={musicSvg} className="music-img" />
