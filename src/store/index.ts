@@ -4,13 +4,17 @@ import musicSlice from './modules/music/music'
 import searchSlice from './modules/search/search'
 import playlistSlice from './modules/playlist/playlist'
 import footerSlice from './modules/footer/footer'
+import playlistSortSlice from './modules/playlist-sort'
+import videoSlice from './modules/video/video'
 
 const store = configureStore({
   reducer: {
     music: musicSlice,
     search: searchSlice,
     playlist: playlistSlice,
-    footer: footerSlice
+    footer: footerSlice,
+    playlistSort: playlistSortSlice,
+    video: videoSlice
   }
 })
 //二次封装 使state能自动推导类型
