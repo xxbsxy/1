@@ -25,7 +25,6 @@ const MusicBanner: FC<IProps> = () => {
   if (bgcUrl) {
     bgcUrl = bgcUrl + '?imageView&blur=40x20'
   }
-  console.log(bgcUrl)
   return (
     <BannerWrapper style={{ background: `url('${bgcUrl}') center center / 6000px` }}>
       <Carousel autoplay afterChange={handleAfterChange} effect="fade">

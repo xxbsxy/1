@@ -5,6 +5,7 @@ import { shallowEqualApp, useAppDispatch, useAppSelector } from '@/store'
 import { fetchRecommendSongsDataAction } from '@/store/modules/music/music'
 import { formatMillisecond } from '@/utils/formatMillisecond'
 import { Image } from 'antd'
+import { fetchCurrentSongDataAction } from '@/store/modules/footer/footer'
 interface IProps {
   children?: ReactNode
 }
@@ -20,6 +21,10 @@ const RecommendSong: FC<IProps> = () => {
     }),
     shallowEqualApp
   )
+  //双击播放音乐
+  const playMusic = (id: number) => {
+    dispatch(fetchCurrentSongDataAction(id))
+  }
   return (
     <SongWrapper>
       <table>
@@ -32,7 +37,7 @@ const RecommendSong: FC<IProps> = () => {
           </tr>
           {recommendSongs.map((item) => {
             return (
-              <tr key={item.id} className="item">
+              <tr key={item.id} className="item" onDoubleClick={e => playMusic(item.id)}>
                 <td className="td1">
                   <Image src={item?.picUrl} alt="" className="pic" placeholder preview={false} />
                   {item?.name}

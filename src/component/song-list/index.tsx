@@ -39,16 +39,20 @@ const Songlist: FC<IProps> = (props) => {
                   {item?.name}
                 </td>
                 <td className="td2">
-                  {item?.ar?.map((tag: any, index: number) => {
-                    return (
-                      <span key={tag.id}>
-                        {tag.name}
-                        {index < item?.ar?.length - 1 ? ' / ' : ''}
-                      </span>
-                    )
-                  })}
+                  <div className="name">
+                    {item?.ar?.map((tag: any, index: number) => {
+                      return (
+                        <span key={tag.id}>
+                          {tag.name}
+                          {index < item?.ar?.length - 1 ? ' / ' : ''}
+                        </span>
+                      )
+                    })}
+                  </div>
                 </td>
-                <td className="td3">{item?.al?.name}</td>
+                <td className="td3">
+                  <div className="al-name">{item?.al?.name}</div>
+                </td>
                 <td className="td4">{formatMillisecond(item?.dt)}</td>
               </tr>
             )

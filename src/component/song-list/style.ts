@@ -13,11 +13,12 @@ export const SongListWrapper = styled.div`
       border-radius: 6px;
     }
   }
-  .td2 {
+  .name,
+  .al-name {
     width: 300px;
-  }
-  .td3 {
-    width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   .td4 {
     width: 200px;
@@ -27,11 +28,6 @@ export const SongListWrapper = styled.div`
     border-top: 0.5px solid #ebeef5;
     &:hover {
       background-color: #f5f7fa;
-    }
-    td {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
     }
   }
   .top {

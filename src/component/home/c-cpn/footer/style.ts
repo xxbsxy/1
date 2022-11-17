@@ -1,11 +1,13 @@
 import styled from 'styled-components'
 
 export const FooterWrapper = styled.div`
+  position: relative;
   display: flex;
   align-items: center;
-  .footer {
+  .left {
     display: flex;
     align-items: center;
+    margin-top: 6px;
     width: 300px;
     overflow: hidden;
     .pic {
@@ -15,10 +17,16 @@ export const FooterWrapper = styled.div`
       border-radius: 6px;
     }
     .right {
+      margin-top: 4px;
       margin-left: 14px;
       font-size: 16px;
-      .song-name {
-        margin-bottom: 10px;
+      .song-name,
+      .singer-name {
+        width: 150px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        margin-bottom: 6px;
       }
     }
   }
@@ -28,6 +36,18 @@ export const FooterWrapper = styled.div`
       position: relative;
       top: 3px;
       margin-left: 200px;
+      img {
+        cursor: pointer;
+        margin-right: 5px;
+      }
+      .lyric {
+        position: absolute;
+        width: 400px;
+        margin-top: 4px;
+        margin-left: 100px;
+        font-size: 16px;
+        color: #6ca5fe;
+      }
     }
   }
   .slider {
@@ -36,12 +56,17 @@ export const FooterWrapper = styled.div`
     .create-time {
       position: absolute;
       top: -6px;
-      left: -50px;
+      left: -54px;
     }
     .end-time {
       position: absolute;
       top: -6px;
-      right: -50px;
+      right: -48px;
     }
+  }
+  .playlist-icon {
+    position: absolute;
+    right: 50px;
+    cursor: pointer;
   }
 `

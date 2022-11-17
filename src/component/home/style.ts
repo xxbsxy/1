@@ -3,7 +3,7 @@ export const HomeWrapper = styled.div`
   width: 1500px;
   height: 820px;
   background-color: #fff;
-  border-radius: 25px;
+  border-radius: 20px;
   .header {
     height: 60px;
     border-bottom: 1px solid rgb(226, 226, 226);
@@ -11,6 +11,18 @@ export const HomeWrapper = styled.div`
   .container {
     display: flex;
     height: 760px;
+    position: relative;
+    .list {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 80px;
+      width: 440px;
+      background-color: #fff;
+      border-left: 1px solid rgb(226, 226, 226);
+      box-shadow: -4px 0px 8px rgba(0, 0, 0, 0.1);
+      overflow-y: scroll;
+    }
   }
   .aside {
     width: 180px;
@@ -21,7 +33,6 @@ export const HomeWrapper = styled.div`
     display: flex;
     flex-direction: column;
     flex: 1;
-
     .content {
       flex: 1;
       margin-left: 15px;

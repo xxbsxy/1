@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 
 export const BannerWrapper = styled.div`
-  width: 1320px;
+  width: 1280px;
+  margin-right: 15px;
   img {
     width: 700px;
     height: 250px;
