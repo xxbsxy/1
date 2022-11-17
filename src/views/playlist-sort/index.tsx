@@ -4,37 +4,33 @@ import { shallowEqualApp, useAppDispatch, useAppSelector } from '@/store'
 import { fetchTopPlaylistDataAction } from '@/store/modules/playlist-sort'
 import PlaylistList from '@/component/playlist-list'
 import { SortWrapper } from './style'
-import { Pagination } from 'antd'
+import Pagination from '@/component/pagination'
 interface IProps {
   children?: ReactNode
 }
 
 const PlaylistSort: FC<IProps> = () => {
-  const [currentPage, setCurrentPage] = useState(1)
-  const aRef = useRef<HTMLDivElement | null>(null)
   //派发事件获取歌单列表
   const dispatch = useAppDispatch()
   useEffect(() => {
     dispatch(fetchTopPlaylistDataAction({}))
   }, [dispatch])
-  const { playlist, total } = useAppSelector((state) => ({
-    playlist: state.playlistSort.playlist,
-    total: state.playlistSort.total
-  }),shallowEqualApp)
-  const handlePageChange = (page: number) => {
+  const { playlist, total } = useAppSelector(
+    (state) => ({
+      playlist: state.playlistSort.playlist,
+      total: state.playlistSort.total
+    }),
+    shallowEqualApp
+  )
+  const handlePageSizeChange = (page: number) => {
     dispatch(fetchTopPlaylistDataAction({ offset: (page - 1) * 50 }))
-    setCurrentPage(page)
   }
   return (
-    <SortWrapper ref={aRef}>
+    <SortWrapper>
       <PlaylistList playlist={playlist as any} />
-      <Pagination
-        current={currentPage}
-        total={total}
-        defaultPageSize={50}
-        showSizeChanger={false}
-        onChange={handlePageChange}
-      />
+      <div className="page">
+        <Pagination total={total} pageSizeChange={(page: number) => handlePageSizeChange(page)} />
+      </div>
     </SortWrapper>
   )
 }

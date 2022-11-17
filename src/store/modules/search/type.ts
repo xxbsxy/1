@@ -100,3 +100,10 @@ export interface IMvObject {
   result: MvResult
   code: number
 }
+
+//搜索音乐参数
+export interface ISearchData {
+  keywords: string
+  offset?: number
+  type: number
+}

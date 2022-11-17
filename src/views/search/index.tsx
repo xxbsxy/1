@@ -14,9 +14,8 @@ const Search: FC<IProps> = () => {
   const dispatch = useAppDispatch()
   const [searchParams] = useSearchParams()
   const keyword = searchParams.get('keyword') as string
-  console.log(keyword)
   useEffect(() => {
-    dispatch(featchSearchSongDataAction(keyword))
+    dispatch(featchSearchSongDataAction({ keywords: keyword, type: 1 }))
   }, [dispatch, keyword])
   return (
     <SearchWrapper>

@@ -21,7 +21,7 @@ const Playlist: FC<IProps> = (props) => {
   return (
     <PlaylistWrapper>
       <Row>
-        {props.playlist.map((item) => {
+        {props.playlist?.map((item) => {
           return (
             <Col span={5} key={item.id} onClick={(e) => toPlaylistDetail(item.id)}>
               <div className="playlist-item">
