@@ -6,6 +6,7 @@ import playlistSlice from './modules/playlist/playlist'
 import footerSlice from './modules/footer/footer'
 import playlistSortSlice from './modules/playlist-sort'
 import videoSlice from './modules/video/video'
+import commentSlice from './modules/comment'
 
 const store = configureStore({
   reducer: {
@@ -14,7 +15,8 @@ const store = configureStore({
     playlist: playlistSlice,
     footer: footerSlice,
     playlistSort: playlistSortSlice,
-    video: videoSlice
+    video: videoSlice,
+    comment: commentSlice
   }
 })
 //二次封装 使state能自动推导类型

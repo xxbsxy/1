@@ -1,7 +1,6 @@
 import React, { memo, useEffect, useState } from 'react'
 import type { FC, ReactNode } from 'react'
 import { getRank } from '@/service/rank'
-import Playlist from '@/store/modules/playlist/playlist'
 import PlaylistList from '@/component/playlist-list'
 import { RankWrapper } from './style'
 

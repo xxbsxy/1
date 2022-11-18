@@ -3,6 +3,7 @@ import type { FC, ReactNode } from 'react'
 import { TabsWrapper } from './style'
 import { Tabs } from 'antd'
 import PlaylistSong from '../playlist-song'
+import PlaylistComment from '../platlist-comment'
 
 interface IProps {
   children?: ReactNode
@@ -23,7 +24,7 @@ const index: FC<IProps> = () => {
           {
             label: `评论`,
             key: '2',
-            children: '2'
+            children: <PlaylistComment />
           }
         ]}
       />

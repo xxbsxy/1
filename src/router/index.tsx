@@ -3,9 +3,10 @@ import { Navigate, RouteObject } from 'react-router-dom'
 const Music = lazy(() => import('@/views/music'))
 const Search = lazy(() => import('@/views/search'))
 const Rank = lazy(() => import('@/views/rank'))
-const Video = lazy(() => import('@/views/video'))
+const VideoSort = lazy(() => import('@/views/video-sort'))
 const PlaylistSort = lazy(() => import('@/views/playlist-sort'))
 const PlaylistDetail = lazy(() => import('@/views/playlist-detail'))
+const VideoDetail = lazy(() => import('@/views/video-detail'))
 
 const routes: RouteObject[] = [
   {
@@ -30,7 +31,11 @@ const routes: RouteObject[] = [
   },
   {
     path: '/video',
-    element: <Video />
+    element: <VideoSort />
+  },
+  {
+    path: '/videoDetail',
+    element: <VideoDetail />
   },
   {
     path: '/playlistSort',

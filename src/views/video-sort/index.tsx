@@ -9,7 +9,7 @@ interface IProps {
   children?: ReactNode
 }
 
-const Video: FC<IProps> = () => {
+const VideoSort: FC<IProps> = () => {
   const dispatch = useAppDispatch()
 
   useEffect(() => {
@@ -28,4 +28,4 @@ const Video: FC<IProps> = () => {
   )
 }
 
-export default memo(Video)
+export default memo(VideoSort)
