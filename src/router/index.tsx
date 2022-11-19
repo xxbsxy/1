@@ -7,6 +7,7 @@ const VideoSort = lazy(() => import('@/views/video-sort'))
 const PlaylistSort = lazy(() => import('@/views/playlist-sort'))
 const PlaylistDetail = lazy(() => import('@/views/playlist-detail'))
 const VideoDetail = lazy(() => import('@/views/video-detail'))
+const Lyric = lazy(() => import('@/views/lyric'))
 
 const routes: RouteObject[] = [
   {
@@ -40,6 +41,10 @@ const routes: RouteObject[] = [
   {
     path: '/playlistSort',
     element: <PlaylistSort />
+  },
+  {
+    path: '/lyric',
+    element: <Lyric />
   }
 ]
 

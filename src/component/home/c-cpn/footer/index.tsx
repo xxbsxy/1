@@ -11,6 +11,8 @@ import { Badge } from 'antd'
 import { Slider } from 'antd'
 import { formatMillisecond } from '@/utils/formatMillisecond'
 import { changeLyricIndexAction, changePlyalisIndextAction } from '@/store/modules/footer/footer'
+import { useNavigate } from 'react-router-dom'
+import { FullscreenOutlined } from '@ant-design/icons'
 interface IProps {
   children?: ReactNode
   changeShow: () => void
@@ -25,6 +27,7 @@ const Footer: FC<IProps> = (props) => {
   const audioRef = useRef<HTMLAudioElement | null>(null)
   const lyricRef = useRef<HTMLElement | null>(null)
   const dispatch = useAppDispatch()
+  const navigate = useNavigate()
   // 从redux中获取数据
   const { playlist, playlistIndex, lyricIndex } = useAppSelector(
     (state) => ({
@@ -131,15 +134,26 @@ const Footer: FC<IProps> = (props) => {
   const changePlayListState = () => {
     props.changeShow()
   }
+  //点击去歌词界面
+  const toLyric = () => {
+    navigate('/lyric')
+  }
   return (
     <FooterWrapper>
       <audio ref={audioRef} onTimeUpdate={handleTimeUpdata}></audio>
       <div className="left">
-        {currentSong?.al?.picUrl ? (
-          <img src={currentSong?.al?.picUrl} alt="" className="pic" />
-        ) : (
-          <img src={require('@/assets/img/header/vae.jpg')} alt="" className="pic" />
-        )}
+        <div className="img">
+          {currentSong?.al?.picUrl ? (
+            <div className="a">
+              <div className="mask" onClick={toLyric}>
+                <FullscreenOutlined />
+              </div>
+              <img src={currentSong?.al?.picUrl} alt="" className="pic" />
+            </div>
+          ) : (
+            <img src={require('@/assets/img/header/vae.jpg')} alt="" className="pic" />
+          )}
+        </div>
         <div className="right">
           <div className="song-name">{currentSong?.name}</div>
           <div className="singer-name">

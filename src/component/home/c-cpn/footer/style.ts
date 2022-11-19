@@ -10,12 +10,37 @@ export const FooterWrapper = styled.div`
     margin-top: 6px;
     width: 300px;
     overflow: hidden;
-    .pic {
+    .img {
+      position: relative;
       margin-left: 20px;
       width: 54px;
       height: 54px;
-      border-radius: 6px;
+      cursor: pointer;
+      &:hover .mask {
+        display: block;
+      }
+      .pic {
+        width: 54px;
+        height: 54px;
+        border-radius: 6px;
+      }
+      .mask {
+        position: absolute;
+        display: none;
+        color: #fff;
+        text-align: center;
+        line-height: 50px;
+        font-size: 30px;
+        bottom: 0;
+        right: 0;
+        top: 0;
+        left: 0;
+        text-align: center;
+        border-radius: 6px;
+        background-color: rgba(0, 0, 0, 0.3);
+      }
     }
+
     .right {
       margin-top: 4px;
       margin-left: 14px;

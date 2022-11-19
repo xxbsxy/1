@@ -40,7 +40,8 @@ const footerSlice = createSlice({
   initialState: {
     playlist: [] as ICurrentSong[], //播放列表
     playlistIndex: -1, //当前播放歌曲索引
-    lyricIndex: -1 //当前歌词索引
+    lyricIndex: -1, //当前歌词索引,
+    lyricTotal: 0
   },
   reducers: {
     changeCurrentSongUrlAction(state, { payload }) {
@@ -48,11 +49,14 @@ const footerSlice = createSlice({
     },
     changeCurrentSongLyricAction(state, { payload }) {
       const lyrics = parseLyric(payload.lrc.lyric)
+      state.lyricTotal = lyrics.length
       state.playlist[state.playlistIndex].lyrics = lyrics
     },
     changePlyalistAction(state, { payload }) {
       state.playlist.push(payload)
       state.playlistIndex = state.playlist.length - 1
+      localStorage.setItem('playlist', JSON.stringify(state.playlist))
+      localStorage.setItem('playlistIndex', JSON.stringify(state.playlistIndex))
     },
     changeLyricIndexAction(state, { payload }) {
       state.lyricIndex = payload
